@@ -1,6 +1,12 @@
-Our goal was to create a website with a good design and useful functionality.
 
-When you visit the site, the first thing you will see is the top link bar.
+Tere tulemast elECO veebisaidi kasutajadokumentatsioonile
+
+
+Meie eesmärk oli luua hea disaini ja kasuliku funktsionaalsusega veebileht.
+
+
+Esimene asi, mida teete saidile sisenedes, on ülemine navigeerimisriba.
+
 
 Kui klõpsate nupul "Avaleht", suunatakse teid tagasi navigeerimisribale
 
