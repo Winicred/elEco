@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Title -->
+	<title>elECO</title>
+
+	<!-- Meta variables -->
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta property="og:image" content="images/preview.jpg">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- Favicon -->
+	<link rel="icon" href="images/favicon.png">
+
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/media.css">
+	<link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="scss/icons.scss">
+	<link rel="stylesheet" href="css/progress-bar.css">
+
+	<!-- AOS styles -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+	<!-- Chart script -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+	<!-- AOS script -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+	<!-- Custom js script -->
+	<script src="js/config.js" type="module"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<!-- Preloader - loading bar before page open -->
+	<div class="preloader">
+		<div class="preloader__row">
+			<div class="preloader__item"></div>
+			<div class="preloader__item"></div>
+		</div>
+	</div>
+
+	<!-- Custom scrollbar -->
+	<div class="scrollbar" id="style-2">
+		<div class="force-overflow"></div>
+	</div>
+
+	<!-- Main header body -->
+	<header id="home">
+		<div class="navbar">
+			<div class="container">
+				<div class="col-3">
+					<div class="logo">
+						<a href="#" class="logo__link"><i class="fas fa-plug"></i> elECO</a>
+					</div>
+				</div>
+				<div class="col-6">
+					<!-- Nav. links -->
+					<ul class="top-menu">
+						<li class="top-menu__item">
+							<span class="top-menu__link">Home</span>
+						</li>
+						<li class="top-menu__item">
+							<a href="#myChartContainer" class="top-menu__link">Prices for the day in advance</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+						data-bs-toggle="dropdown" aria-expanded="false" style="background-color: var(--accent);">
+						Languange
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+						<li><a class="dropdown-item" href="index.html">Estonian</a></li>
+						<li><a class="dropdown-item" href="index-RU.html">Russian</a></li>
+						<li><a class="dropdown-item" href="index-ENG.html">English</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="sidebar">
+		<nav>
+			<ul>
+
+				<!-- Right-side navbar -->
+				<li><a href="#home" class="dot name-active"><span>Home</span></a></li>
+				<li><a href="#price-table" class="dot"><span>Price table</span></a></li>
+				<li><a href="#myChartContainer" class="dot"><span>MyChart</span></a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<!-- Information on page -->
+	<div class="content">
+		<div class="container">
+			<div class="top-content-wrapper">
+				<div class="col-md-4">
+					<div class="top-left">
+						<h2>Your smart electricity assistant</h2>
+						<h4>We will help you use electricity wisely!</h4>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="top-image-right">
+						<div data-aos="fade-left">
+							<img src="images/undraw_web_devices_re_m8sc.svg">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</header>
+
+	<div class="content">
+		<div class="container">
+			<div class="content-wrapper">
+				<div class="col-md-7">
+					<div class="about-image__item">
+						<div data-aos="fade-right">
+							<img src="images/undraw_setup_analytics_re_foim.svg">
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-5">
+					<div class="about-content__item">
+						<h2>Smart Assistant</h2>
+						<h4>Our smart assistant will help you know when it's best to use electricity!</h4>
+						<div class="ticks-about">
+							<div class="tick-1">
+								<div class="tick__item">
+									<img src="images/Path.svg">
+								</div>
+								<h4>Never worry about overpaying for electricity again!</h4>
+							</div>
+						</div>
+
+						<div class="ticks-about-2">
+							<div class="tick-1">
+								<div class="tick__item">
+									<img src="images/Path.svg">
+								</div>
+								<h4>You can see the price of the stock market !</h4>
+							</div>
+						</div>
+
+						<div class="ticks-about-3">
+							<div class="tick-1">
+								<div class="tick__item">
+									<img src="images/Path.svg">
+								</div>
+								<h4>On our website you will see when it is more profitable to use electricity!</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="price-table" id="price-table">
+			<div class="container">
+				<div class="row">
+					<div class="title">
+						<h1>Hinnatabel</h1>
+						<h4>Senine teave</h4>
+					</div>
+
+					<div class="mix-max-avg-col">
+
+						<div class="col-md-3" data-aos="fade-left">
+							<div class="min-item">
+								<h2>Minimaalne hind</h2>
+								<h4><span>16.91</span><i class="fas fa-euro-sign"></i></h4>
+
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="average-item">
+								<h2>Keskmine hind</h2>
+								<h4><span>12.5</span><i class="fas fa-euro-sign"></i></h4>
+							</div>
+						</div>
+
+						<div class="col-md-3" data-aos="fade-right">
+							<div class="max-item">
+								<h2>Maksimaalne hind</h2>
+								<h4><span>226.32</span><i class="fas fa-euro-sign"></i></h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Data graphic -->
+		<div class="container" id="myChartContainer">
+			<div class="chart">
+				<div data-aos="zoom-in" id="myChartBody"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row flex-center">
+		<div class="col-xl-3 col-lg-6 mb-4">
+			<div class="bg-white rounded-lg p-5 shadow">
+				<h2 class="h6 font-weight-bold text-center mb-4">Overall progress</h2>
+
+				<!-- Progress bar 1 -->
+				<div class="progress mx-auto" data-value='80'>
+					<span class="progress-left">
+						<span class="progress-bar border-primary"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar border-primary"></span>
+					</span>
+					<div
+						class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						<div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
+					</div>
+				</div>
+				<!-- END -->
+
+				<!-- Demo info -->
+				<div class="row text-center mt-4">
+					<div class="col-6 border-right">
+						<div class="h4 font-weight-bold mb-0">28%</div><span class="small text-gray">Last
+							week</span>
+					</div>
+					<div class="col-6">
+						<div class="h4 font-weight-bold mb-0">60%</div><span class="small text-gray">Last
+							month</span>
+					</div>
+				</div>
+				<!-- END -->
+			</div>
+		</div>
+
+		<div class="col-xl-3 col-lg-6 mb-4">
+			<div class="bg-white rounded-lg p-5 shadow">
+				<h2 class="h6 font-weight-bold text-center mb-4">Work hours</h2>
+
+				<!-- Progress bar 2 -->
+				<div class="progress mx-auto" data-value='25'>
+					<span class="progress-left">
+						<span class="progress-bar border-danger"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar border-danger"></span>
+					</span>
+					<div
+						class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						<div class="h2 font-weight-bold">25<sup class="small">%</sup></div>
+					</div>
+				</div>
+				<!-- END -->
+
+				<!-- Demo info-->
+				<div class="row text-center mt-4">
+					<div class="col-6 border-right">
+						<div class="h4 font-weight-bold mb-0">28%</div><span class="small text-gray">Last
+							week</span>
+					</div>
+					<div class="col-6">
+						<div class="h4 font-weight-bold mb-0">60%</div><span class="small text-gray">Last
+							month</span>
+					</div>
+				</div>
+				<!-- END -->
+			</div>
+		</div>
+	</div>
+	<div class="row flex-center">
+		<div class="col-xl-3 col-lg-6 mb-4">
+			<div class="bg-white rounded-lg p-5 shadow">
+				<h2 class="h6 font-weight-bold text-center mb-4">Server time</h2>
+
+				<!-- Progress bar 3 -->
+				<div class="progress mx-auto" data-value='76'>
+					<span class="progress-left">
+						<span class="progress-bar border-success"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar border-success"></span>
+					</span>
+					<div
+						class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						<div class="h2 font-weight-bold">76<sup class="small">%</sup></div>
+					</div>
+				</div>
+				<!-- END -->
+
+				<!-- Demo info -->
+				<div class="row text-center mt-4">
+					<div class="col-6 border-right">
+						<div class="h4 font-weight-bold mb-0">28%</div><span class="small text-gray">Last
+							week</span>
+					</div>
+					<div class="col-6">
+						<div class="h4 font-weight-bold mb-0">60%</div><span class="small text-gray">Last
+							month</span>
+					</div>
+				</div>
+				<!-- END -->
+			</div>
+		</div>
+
+		<div class="col-xl-3 col-lg-6 mb-4">
+			<div class="bg-white rounded-lg p-5 shadow">
+				<h2 class="h6 font-weight-bold text-center mb-4">Total overdue</h2>
+
+				<!-- Progress bar 4 -->
+				<div class="progress mx-auto" data-value='12'>
+					<span class="progress-left">
+						<span class="progress-bar border-warning"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar border-warning"></span>
+					</span>
+					<div
+						class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						<div class="h2 font-weight-bold">12<sup class="small">%</sup></div>
+					</div>
+				</div>
+				<!-- END -->
+
+				<!-- Demo info -->
+				<div class="row text-center mt-4">
+					<div class="col-6 border-right">
+						<div class="h4 font-weight-bold mb-0">28%</div><span class="small text-gray">Last
+							week</span>
+					</div>
+					<div class="col-6">
+						<div class="h4 font-weight-bold mb-0">60%</div><span class="small text-gray">Last
+							month</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="content">
+			<div class="container">
+				<div class="footer_item">
+					<div class="col-md-6">Social medias</div>
+					<div class="socialmedias">
+
+						<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,600&display=swap"
+							rel="stylesheet">
+
+						<div class='social-links'>
+							<div class='social-btn flex-center'>
+								<a href="https://www.instagram.com/eestienergia/"><img src="images/instagram.svg"
+										width="40px" height="40px"></a>
+								<path
+									d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+								</img>
+							</div>
+
+							<div class='social-btn flex-center'>
+								<a href="https://www.facebook.com/EestiEnergia/"><img src="images/facebook.svg"
+										width="40px" height="40px"></a>
+								<path
+									d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+								</img>
+							</div>
+						</div>
+					</div>
+				</div>
+	</footer>
+
+	<!-- Loaded custom scripts -->
+	<script src="js/common.js"></script>
+	<script src="js/chart.js" type="module"></script>
+	<script src="js/nav.js"></script>
+	<script src="js/preloader.js"></script>
+	<script src="js/progress-bar.js"></script>
+
+	<!-- AOS init -->
+	<script>AOS.init();</script>
+</body>
+
+</html>

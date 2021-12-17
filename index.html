@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Title -->
+	<title>elECO</title>
+
+	<!-- Meta variables -->
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta property="og:image" content="images/preview.jpg">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- Favicon -->
+	<link rel="icon" href="images/favicon.png">
+
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/media.css">
+	<link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="scss/icons.scss">
+	<link rel="stylesheet" href="css/progress-bar.css">
+	<link rel="stylesheet" href="css/social-icons.css">
+
+	<!-- AOS styles -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+	<!-- Chart script -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+	<!-- AOS script -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+	<!-- Custom js script -->
+	<script src="js/config.js" type="module"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<!-- Preloader - loading bar before page open -->
+	<div class="preloader">
+		<div class="preloader__row">
+			<div class="preloader__item"></div>
+			<div class="preloader__item"></div>
+		</div>
+	</div>
+
+	<!-- Custom scrollbar -->
+	<div class="scrollbar" id="style-2">
+		<div class="force-overflow"></div>
+	</div>
+
+	<!-- Main header body -->
+	<header>
+		<div class="navbar">
+			<div class="container" id="nav-container">
+				<div class="col-2">
+					<div class="logo">
+						<a href="#" class="logo__link"><i class="fas fa-plug"></i> elECO</a>
+					</div>
+				</div>
+				<div class="col-6" style="width: 700px !important;">
+					<!-- Nav. links -->
+					<ul class="top-menu">
+						<li class="top-menu__item">
+							<span class="top-menu__link">Avaleht</span>
+						</li>
+						<li class="top-menu__item">
+							<a href="#price-table" class="top-menu__link">Hinnatabel</a>
+						</li>
+						<li class="top-menu__item">
+							<a href="#myChartContainer" class="top-menu__link">Päeva ette hinnad</a>
+						</li>
+						<li class="top-menu__item">
+							<a href="#progress-bars" class="top-menu__link">Elektri näidikud</a>
+						</li>
+						<li class="top-menu__item">
+							<a href="readme.html"
+								class="top-menu__link">Dokumentatsioon</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+						data-bs-toggle="dropdown" aria-expanded="false" style="background-color: var(--accent);">
+						Keel
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+						<li><a class="dropdown-item" href="index.html">Eesti</a></li>
+						<li><a class="dropdown-item" href="index-RU.html">Vene</a></li>
+						<li><a class="dropdown-item" href="index-ENG.html">Inglise</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="sidebar">
+		<nav>
+			<ul>
+				<!-- Right-side navbar -->
+				<li><a href="#home" class="dot name-active"><span>Avaleht</span></a></li>
+				<li><a href="#price-table" class="dot"><span>Hinnatabel</span></a></li>
+				<li><a href="#myChartContainer" class="dot"><span>Diagramm</span></a></li>
+				<li><a href="#progress-bars" class="dot"><span>Näidikud</span></a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<!-- Information on page -->
+	<div id="home">
+		<div class="content">
+			<div class="container">
+				<div class="top-content-wrapper">
+					<div class="col-md-4">
+						<div class="top-left">
+							<h2>Sinu nutikas elekrtiassistent</h2>
+							<h4>Me aitame teid kasutada elektrit targalt!</h4>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="top-image-right">
+							<div data-aos="fade-left" data-aos-duration="1000">
+								<img src="images/undraw_web_devices_re_m8sc.svg">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="container">
+				<div class="content-wrapper">
+					<div class="col-md-7">
+						<div class="about-image__item">
+							<div data-aos="fade-right" data-aos-duration="1000">
+								<img src="images/undraw_setup_analytics_re_foim.svg">
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-5">
+						<div class="about-content__item">
+							<h2>Nutikas assistent</h2>
+							<h4>Meie nutikas assistent aitab teid kasutada elektrit targalt!</h4>
+							<div class="ticks-about">
+								<div class="tick-1">
+									<div class="tick__item">
+										<img src="images/Path.svg">
+									</div>
+									<h4>Ärge kunagi muretsege elektri ülemaksmise pärast</h4>
+								</div>
+							</div>
+
+							<div class="ticks-about-2">
+								<div class="tick-1">
+									<div class="tick__item">
+										<img src="images/Path.svg">
+									</div>
+									<h4>Te saate näha börisi hindasid!</h4>
+								</div>
+							</div>
+
+							<div class="ticks-about-3">
+								<div class="tick-1">
+									<div class="tick__item">
+										<img src="images/Path.svg">
+									</div>
+									<h4>Meie kodulehel saate näha, millal on elektrit tulusam kasutada!</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<p id="test"></p>
+
+	<div class="price-table" id="price-table">
+		<div class="container">
+			<div class="row">
+				<div class="title">
+					<h1>Hinnatabel</h1>
+					<h4>Senine teave</h4>
+				</div>
+
+				<div class="mix-max-avg-col">
+
+					<div class="col-md-3" data-aos="fade-left" data-aos-duration="1000">
+						<div class="min-item">
+							<h2>Minimaalne hind</h2>
+							<h4><span id="minimalPrice">16.91</span><i class="fas fa-euro-sign"></i></h4>
+							<h5 class="khw-cent">euro cent/kWh</h5>
+
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="average-item">
+							<h2>Keskmine hind</h2>
+							<h4><span id="averagePrice">12.5</span><i class="fas fa-euro-sign"></i></h4>
+							<h5 class="khw-cent">euro cent/kWh</h5>
+						</div>
+					</div>
+
+					<div class="col-md-3" data-aos="fade-right" data-aos-duration="1000">
+						<div class="max-item">
+							<h2>Maksimaalne hind</h2>
+							<h4><span id="maximumPrice">226.32</span><i class="fas fa-euro-sign"></i></h4>
+							<h5 class="khw-cent">euro cent/kWh</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Data graphic -->
+	<div class="container">
+		<button onclick="hideShowChart()" class="col-md-3 m-5 btn btn-success"
+			style="background: rgb(2, 137, 122) !important;">Peida diagrammi</button>
+		<div class="chart" id="myChartContainer">
+			<div data-aos="zoom-in" data-aos-duration="1000" id="myChartBody">
+				<canvas id="myChart"></canvas>
+			</div>
+		</div>
+	</div>
+
+	<!-- Progress bars -->
+	<div class="row flex-center" id="progress-bars" data-aos="fade-up-left" data-aos-duration="2000">
+		<div class="col-xl-3 col-lg-6 mb-4">
+			<div class="rounded-lg p-5 shadow"
+				style="background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 1), rgba(2, 137, 122, 0.2));">
+				<div class="d-flex justify-content-around">
+					<h2 class="h6 font-weight-bold text-center mb-4">Boiler</h2>
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+					</div>
+				</div>
+				
+				<!-- Progress bar 1 -->
+				<div class="progress mx-auto" data-value='72'>
+					<span class="progress-left">
+						<span class="progress-bar border-primary"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar border-primary"></span>
+					</span>
+					<div
+						class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						<div class="h2 font-weight-bold">72<sup class="small">%</sup></div>
+					</div>
+				</div>
+				<!-- END -->
+
+				<!-- Demo info -->
+				<div class="row text-center mt-4">
+					<div class="col-6 border-right">
+						<div class="h4 font-weight-bold mb-0">66%</div><span class="small text-gray">Eelmisel
+							nädalal</span>
+					</div>
+					<div class="col-6">
+						<div class="h4 font-weight-bold mb-0">61%</div><span class="small text-gray">Eelmisel
+							kuul</span>
+					</div>
+				</div>
+				<div class="row text-center mt-4">
+					<div class="progress mx-auto" data-value='79'>
+						<span class="progress-left">
+							<span class="progress-bar border-danger"></span>
+						</span>
+						<span class="progress-right">
+							<span class="progress-bar border-danger"></span>
+						</span>
+						<div
+							class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+							<div class="h2 font-weight-bold">79<sup class="small">°C</sup></div>
+						</div>
+					</div>
+					<span class="small text-gray">Temperatuur</span>
+				</div>
+				<!-- END -->
+			</div>
+		</div>
+
+		<div class="col-xl-3 col-lg-6 mb-4" data-aos="fade-up-right" data-aos-duration="2000">
+			<div class="rounded-lg p-5 shadow"
+				style="background: -webkit-linear-gradient(-125deg, rgba(255, 255, 255, 1), rgba(2, 137, 122, 0.2));">
+				<div class="d-flex justify-content-around">
+					<h2 class="h6 font-weight-bold text-center mb-4">Aku</h2>
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+					</div>
+				</div>
+
+				<!-- Progress bar 2 -->
+				<div class="progress mx-auto" data-value='45'>
+					<span class="progress-left">
+						<span class="progress-bar border-info"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar border-info"></span>
+					</span>
+					<div
+						class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						<div class="h2 font-weight-bold">45<sup class="small">%</sup></div>
+					</div>
+				</div>
+				<!-- END -->
+
+				<!-- Demo info-->
+				<div class="row text-center mt-4">
+					<div class="col-6 border-right">
+						<div class="h4 font-weight-bold mb-0">40%</div><span class="small text-gray">Eelmisel
+							nädalal</span>
+					</div>
+					<div class="col-6">
+						<div class="h4 font-weight-bold mb-0">42%</div><span class="small text-gray">Eelmisel
+							kuul</span>
+					</div>
+				</div>
+				<div class="row text-center mt-4">
+					<div class="progress mx-auto" data-value='79'>
+						<span class="progress-left">
+							<span class="progress-bar border-danger"></span>
+						</span>
+						<span class="progress-right">
+							<span class="progress-bar border-danger"></span>
+						</span>
+						<div
+							class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+							<div class="h2 font-weight-bold">73<sup class="small">°C</sup></div>
+						</div>
+					</div>
+					<span class="small text-gray">Temperatuur</span>
+				</div>
+				<!-- END -->
+			</div>
+		</div>
+	</div>
+	<div class="row flex-center" data-aos="fade-down-left" data-aos-duration="1000">
+		<div class="col-xl-3 col-lg-6 mb-4">
+			<div class="rounded-lg p-5 shadow"
+				style="background: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 1), rgba(2, 137, 122, 0.2));">
+				<div class="d-flex justify-content-around">
+					<h2 class="h6 font-weight-bold text-center mb-4">Fänn</h2>
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+					</div>
+				</div>
+
+				<!-- Progress bar 3 -->
+				<div class="progress mx-auto" data-value='76'>
+					<span class="progress-left">
+						<span class="progress-bar border-success"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar border-success"></span>
+					</span>
+					<div
+						class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						<div class="h2 font-weight-bold">74<sup class="small">%</sup></div>
+					</div>
+				</div>
+				<!-- END -->
+
+				<!-- Demo info -->
+				<div class="row text-center mt-4">
+					<div class="col-6 border-right">
+						<div class="h4 font-weight-bold mb-0">56%</div><span class="small text-gray">Eelmisel
+							nädalal</span>
+					</div>
+					<div class="col-6">
+						<div class="h4 font-weight-bold mb-0">54%</div><span class="small text-gray">Eelmisel
+							kuul</span>
+					</div>
+				</div>
+				<div class="row text-center mt-4">
+					<div class="progress mx-auto" data-value='79'>
+						<span class="progress-left">
+							<span class="progress-bar border-danger"></span>
+						</span>
+						<span class="progress-right">
+							<span class="progress-bar border-danger"></span>
+						</span>
+						<div
+							class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+							<div class="h2 font-weight-bold">75<sup class="small">°C</sup></div>
+						</div>
+					</div>
+					<span class="small text-gray">Temperatuur</span>
+				</div>
+				<!-- END -->
+			</div>
+		</div>
+
+		<div class="col-xl-3 col-lg-6 mb-4" data-aos="fade-down-right" data-aos-duration="1000">
+			<div class="rounded-lg p-5 shadow"
+				style="background: -webkit-linear-gradient(125deg, rgba(255, 255, 255, 1), rgba(2, 137, 122, 0.2));">
+				<div class="d-flex justify-content-around">
+					<h2 class="h6 font-weight-bold text-center mb-4">Kõik elektriseadmed</h2>
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+					</div>
+				</div>
+
+				<!-- Progress bar 4 -->
+				<div class="progress mx-auto" data-value='63'>
+					<span class="progress-left">
+						<span class="progress-bar border-warning"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar border-warning"></span>
+					</span>
+					<div
+						class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						<div class="h2 font-weight-bold">63<sup class="small">%</sup></div>
+					</div>
+				</div>
+				<!-- END -->
+
+				<!-- Demo info -->
+				<div class="row text-center mt-4">
+					<div class="col-6 border-right">
+						<div class="h4 font-weight-bold mb-0">54%</div><span class="small text-gray">Eelmisel
+							nädalal</span>
+					</div>
+					<div class="col-6">
+						<div class="h4 font-weight-bold mb-0">52%</div><span class="small text-gray">Eelmisel
+							kuul</span>
+					</div>
+				</div>
+				<div class="row text-center mt-4">
+					<div class="progress mx-auto" data-value='75'>
+						<span class="progress-left">
+							<span class="progress-bar border-danger"></span>
+						</span>
+						<span class="progress-right">
+							<span class="progress-bar border-danger"></span>
+						</span>
+						<div
+							class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+							<div class="h2 font-weight-bold">75<sup class="small">°C</sup></div>
+						</div>
+					</div>
+					<span class="small text-gray">Temperatuur</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<footer>
+		<div class="content">
+			<div class="container flex-center">
+				<div class="footer_item">
+					<div class="social-container">
+						<ul class="social-icons">
+							<li><a href="https://www.instagram.com/eestienergia/"><i class="fa fa-instagram"></i></a>
+							</li>
+							<li><a href="https://mobile.twitter.com/enefit"><i class="fa fa-twitter"></i></a></li>
+							<li><a
+									href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiSlbOHo-r0AhWLlosKHZ41C-wQFnoECAsQAQ&url=https%3A%2F%2Fee.linkedin.com%2Fcompany%2Feesti-energia&usg=AOvVaw0KJr42Tjgp0hOUyEfX82dm"><i
+										class="fa fa-linkedin"></i></a></li>
+							<li><a href="https://www.facebook.com/EestiEnergia/"><i class="fa fa-facebook"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Loaded custom scripts -->
+	<script src="js/common.js"></script>
+	<script src="js/chart.js" type="module"></script>
+	<script src="js/nav.js"></script>
+	<script src="js/preloader.js"></script>
+	<script src="js/progress-bar.js"></script>
+
+	<!-- Custom scripts -->
+	<script>
+		// Hide chart
+		function hideShowChart() {
+			var x = document.getElementById("myChartContainer");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			}
+		};
+	</script>
+
+	<!-- AOS init -->
+	<script>AOS.init();</script>
+</body>
+
+</html>
